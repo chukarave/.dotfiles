@@ -25,11 +25,11 @@ set backspace=indent,eol,start " Allow backspacing over autoindent, line breaks 
 set wildmenu		" visual autocomplete for command menu
 set lazyredraw		" redraw only when necessary
 set showmatch 		" highlight matching parenthesis
-
 """""""""""""""""""""
 " Pasting & Editing "
 """""""""""""""""""""
 set paste
+set clipboard=unnamedplus
 
 """"""""""
 " Search "
@@ -89,6 +89,9 @@ nnoremap <leader>u :GundoToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden = 1
 " toggle NERDTree with ctrl * n
+nnoremap <C-m> :vertical resize 
+" ctrl+m allows resizing windows vertically. nr of columns must be given
+" e.g. :vertical resize 120 <CR>
 
 """"""""""""""""""""
 " vim-php-cs-fixer "
