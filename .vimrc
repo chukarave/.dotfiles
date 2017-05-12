@@ -9,8 +9,8 @@ filetype plugin on
 """"""""""""""""""""""""
 "    TABs & Spacing    "
 """"""""""""""""""""""""
-set tabstop=4	" number of visual spaces per TAB
-set softtabstop=4 " number of visual spaces per TAB when editing
+set tabstop=2	" number of visual spaces per TAB
+set softtabstop=2 " number of visual spaces per TAB when editing
 set expandtab 	  " turns TABs into spaces 
 
 """"""
@@ -25,19 +25,22 @@ set backspace=indent,eol,start " Allow backspacing over autoindent, line breaks 
 set wildmenu		" visual autocomplete for command menu
 set lazyredraw		" redraw only when necessary
 set showmatch 		" highlight matching parenthesis
+
 """""""""""""""""""""
 " Pasting & Editing "
 """""""""""""""""""""
 set paste
 set clipboard=unnamedplus
+nmap ff o<Esc>
+" ff adds another line without entering insert mode
 
 """"""""""
 " Search "
 """"""""""
 set incsearch 	" search as charachters are entered
 set hlsearch 	" highlight matches
-nnoremap	<leader><space> :nohlsearch<CR>
-" turn off search highlight with ,<space>
+nnoremap	<space>l :nohlsearch<CR>
+" turn off search highlight with <space>l
 
 """""""""""
 " Folding "
@@ -47,8 +50,6 @@ nnoremap	<leader><space> :nohlsearch<CR>
 set foldenable		" enable folding
 set foldlevelstart=10 	" open most folds by default 
 set foldnestmax=10	" 10 nested fold max
-nnoremap <space> ya	
-"  space ya opens/closes folds
 set foldmethod=indent 	" fold base on indent level
 
 """""""""""""
@@ -72,6 +73,8 @@ nnoremap gV `[v`]
 let mapleader=","   " COMMA IS OUR LEADER
 " saves a session with all opened windows with ,s
 nnoremap <leader>s :mksession<CR> 
+nnoremap <leader>so :source ~/.vimrc<CR>
+" Make current buffer implement .vimrc
 
 """""""""""""
 " gundo.vim "
@@ -89,7 +92,7 @@ nnoremap <leader>u :GundoToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden = 1
 " toggle NERDTree with ctrl * n
-nnoremap <C-m> :vertical resize 
+nnoremap <F8> :vertical resize 
 " ctrl+m allows resizing windows vertically. nr of columns must be given
 " e.g. :vertical resize 120 <CR>
 
